@@ -18,6 +18,9 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
+          <Link href="/contents" className={styles.link}>
+            Content
+          </Link>
           <Link href="/write" className={styles.link}>
             Write
           </Link>
