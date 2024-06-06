@@ -9,13 +9,13 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.social}>
-        <Link href="/">
+        <Link href="https://www.facebook.com/naufal.fadhliz">
           <Image src="/facebook.png" alt="facebook" width={30} height={30} />
         </Link>
-        <Link href="/">
+        <Link href="https://www.instagram.com/nfl.fadhli/">
           <Image src="/instagram.png" alt="instagram" width={30} height={30} />
         </Link>
-        <Link href="/">
+        <Link href="https://www.youtube.com/channel/UCEkRLYtbMaEQIlJnITWXzXw">
           <Image src="/youtube.png" alt="youtube" width={30} height={30} />
         </Link>
       </div>

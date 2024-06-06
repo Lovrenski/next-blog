@@ -22,6 +22,7 @@
     "react-dom": "18.2.0",
     "react-quill": "^2.0.0",
     "remarkable-react": "^1.4.3",
+    "sweetalert2": "^11.11.1",
     "swr": "^2.2.5"
   },
   "devDependencies": {

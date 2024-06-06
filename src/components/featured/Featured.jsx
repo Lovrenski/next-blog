@@ -28,11 +28,10 @@ const Featured = async () => {
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{data?.title}</h1>
-          {/* <div
+          <div
             className={styles.postDesc}
-            dangerouslySetInnerHTML={{ __html: data?.desc }}
-          /> */}
-          <p className={styles.postDesc}>Lorem</p>
+            dangerouslySetInnerHTML={{ __html: data?.desc.substring(0, 100) }}
+          />
           <Link className={styles.button} href={`/posts/${data?.slug}`}>
             Read
           </Link>

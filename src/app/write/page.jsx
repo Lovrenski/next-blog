@@ -49,7 +49,9 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        (error) => {
+          console.log(error);
+        },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
@@ -108,10 +110,10 @@ const WritePage = () => {
         onChange={(e) => setCatSlug(e.target.value)}
       >
         <option value="style">Style</option>
-        <option value="fashion">Fashion</option>
+        <option value="game">Game</option>
         <option value="food">Food</option>
         <option value="culture">Culture</option>
-        <option value="travel">Travel</option>
+        <option value="anime">Anime</option>
         <option value="coding">Coding</option>
       </select>
       <div className={styles.editor}>
@@ -134,8 +136,16 @@ const WritePage = () => {
             <button className={styles.addButton}>
               <Image src="/external.png" alt="" width={16} height={16} />
             </button>
+            <input
+              type="file"
+              id="video"
+              onChange={(e) => setFile(e.target.files[0])}
+              style={{ display: "none" }}
+            />
             <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
+              <label htmlFor="video">
+                <Image src="/video.png" alt="" width={16} height={16} />
+              </label>
             </button>
           </div>
         )}

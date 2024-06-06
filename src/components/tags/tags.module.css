@@ -1,0 +1,11 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.listTitle {
+    font-weight: bold;
+}
