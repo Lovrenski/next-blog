@@ -18,23 +18,33 @@ const Footer = () => {
           <h1 className={styles.logoText}>Whiteblog</h1>
         </div>
         <p className={styles.desc}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          dapibus orci sit amet est rhoncus mollis vitae a nisl. Nulla a
-          faucibus ligula.
+          Fill the blank canvas with your creativity. Fill the page with your
+          knowledge. This plain box is ready to fill with any thoughts. Explore
+          by yourself
         </p>
         <div className={styles.icons}>
-          <Image src="/facebook.png" alt="facebook" width={18} height={18} />
-          <Image src="/instagram.png" alt="instagram" width={18} height={18} />
-          <Image src="/youtube.png" alt="youtube" width={18} height={18} />
+          <Link href="">
+            <Image src="/facebook.png" alt="facebook" width={25} height={25} />
+          </Link>
+          <Link href="">
+            <Image
+              src="/instagram.png"
+              alt="instagram"
+              width={25}
+              height={25}
+            />
+          </Link>
+          <Link href="">
+            <Image src="/youtube.png" alt="youtube" width={25} height={25} />
+          </Link>
         </div>
       </div>
       <div className={styles.links}>
         <div className={styles.list}>
           <span className={styles.listTitle}>Links</span>
           <Link href="/">Homepage</Link>
-          <Link href="/">Blog</Link>
-          <Link href="/">About</Link>
-          <Link href="/">Contact</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Tags</span>

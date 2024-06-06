@@ -20,7 +20,10 @@ export const Card = ({ key, item }) => {
         <Link href={`/posts/${item.slug}`}>
           <h1 className={styles.title}>{item.title}</h1>
         </Link>
-        <p className={styles.desc}>{item.desc.substring(0, 60)}</p>
+        <div
+          className={styles.desc}
+          dangerouslySetInnerHTML={{ __html: item.desc.substring(0, 60) }}
+        />
         <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read more
         </Link>

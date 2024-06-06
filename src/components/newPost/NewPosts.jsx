@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./menuPosts.module.css";
+import styles from "./newPosts.module.css";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/posts/popular", {
+  const res = await fetch("http://localhost:3000/api/posts/newest", {
     cache: "no-store",
   });
 
@@ -15,7 +15,7 @@ const getData = async () => {
   return res.json();
 };
 
-const MenuPosts = async () => {
+const NewPosts = async () => {
   const data = await getData();
 
   return (
@@ -26,6 +26,9 @@ const MenuPosts = async () => {
           className={styles.item}
           key={item._id}
         >
+          <div className={styles.imageContainer}>
+            <Image src={item.img} alt="image" fill className={styles.image} />
+          </div>
           <div className={styles.textContainer}>
             <span className={`${styles.category} ${styles[item.catSlug]}`}>
               {item.catSlug}
@@ -45,4 +48,4 @@ const MenuPosts = async () => {
   );
 };
 
-export default MenuPosts;
+export default NewPosts;

@@ -1,31 +1,46 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const Featured = () => {
+const getData = async (page, cat) => {
+  const res = await fetch(`http://localhost:3000/api/posts/featured`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
+const Featured = async () => {
+  const data = await getData();
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>
-        <b>Hey, white dev here!</b> Discover my stories and creative ideas.
+        <b>Hi, white dev here!</b> Discover my exploration and creative ideas.
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="yessir" fill className={styles.image} />
+          <Image
+            src={`${data?.img}`}
+            alt="yessir"
+            fill
+            className={styles.image}
+          />
         </div>
         <div className={styles.textContainer}>
-          <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            dapibus orci sit amet est rhoncus mollis vitae a nisl.
-          </h1>
-          <p className={styles.postDesc}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            dapibus orci sit amet est rhoncus mollis vitae a nisl. Nulla a
-            faucibus ligula. Aliquam fringilla malesuada neque, et viverra purus
-            rhoncus quis. Sed sed rhoncus nisi. Nunc pellentesque, metus a
-            venenatis varius, nisl risus malesuada massa, at sollicitudin nunc
-            magna a tellus.
-          </p>
-          <button className={styles.button}>Read</button>
+          <h1 className={styles.postTitle}>{data?.title}</h1>
+          <div
+            className={styles.postDesc}
+            dangerouslySetInnerHTML={{ __html: data?.desc }}
+          />
+          <Link className={styles.button} href={`/posts/${data?.slug}`}>
+            Read
+          </Link>
         </div>
       </div>
     </div>

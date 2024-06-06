@@ -20,6 +20,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-quill": "^2.0.0",
+    "remarkable-react": "^1.4.3",
     "swr": "^2.2.5"
   },
   "devDependencies": {
