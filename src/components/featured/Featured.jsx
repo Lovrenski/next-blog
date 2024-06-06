@@ -1,9 +1,8 @@
-import React from "react";
-import styles from "./featured.module.css";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import styles from "./featured.module.css";
 
-const getData = async (page, cat) => {
+const getData = async () => {
   const res = await fetch(`http://localhost:3000/api/posts/featured`, {
     cache: "no-store",
   });
@@ -25,19 +24,15 @@ const Featured = async () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer}>
-          <Image
-            src={`${data?.img}`}
-            alt="yessir"
-            fill
-            className={styles.image}
-          />
+          <Image src={data?.img} alt="featured" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>{data?.title}</h1>
-          <div
+          {/* <div
             className={styles.postDesc}
             dangerouslySetInnerHTML={{ __html: data?.desc }}
-          />
+          /> */}
+          <p className={styles.postDesc}>Lorem</p>
           <Link className={styles.button} href={`/posts/${data?.slug}`}>
             Read
           </Link>

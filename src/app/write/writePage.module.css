@@ -8,6 +8,10 @@
     margin-bottom: 50px;
     padding: 10px 20px;
     margin-left: 50px;
+    background-color: transparent;
+    color: var(--softTextColor);
+    outline: none;
+    border-radius: 5px;
     width: max-content;
   }
   
